@@ -27,3 +27,9 @@
 * Trovato il modello di una porta.
 * Varie prove sul modello della porta.
 * Aggiornamento journal.
+
+# 1 luglio 2019
+
+* Creazione della repository del progetto.
+* Varie prove di materiali e texture sul modello della porta utilizzando gli shader visti a lezione.
+* Aggiornamento journal.
