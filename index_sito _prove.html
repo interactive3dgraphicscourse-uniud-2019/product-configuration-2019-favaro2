@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>PROVIAMO DAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=PT Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> <!-- ACME font -->
+    <style>
+
+    body {
+      font-family: 'Acme';
+      font-size: 20px;
+    }
+
+    h2 {
+      font-family: 'Acme';
+    }
+
+    h5 {
+      font-family: 'Acme';
+      font-size: 18px;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      font-family: Arial;
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-family: Arial;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      font-family: Arial;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="w3-bar w3-amber">
+      <a class="w3-bar-item w3-button w3-large w3-mobile">
+        <img src="pics/Acme-corp.png" style="width:149px; height:68px; border:0;">
+      </a>
+      <a class="w3-bar-item w3-mobile">
+        <input class="w3-input w3-border w3-mobile w3-round-large" style="margin-top:14px;" type="text" placeholder="Cosa stai cercando?">
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-round-large w3-mobile w3-padding-small w3-border" style="font-size:22px; margin-top:23px; background-color:#F7EDD4;">
+        <i class="material-icons" style="font-size:24px; vertical-align:-5px;">search</i>
+        Cerca
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Home</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Offerte</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Novità</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Categorie</a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-mobile" style="margin-top:21px; font-size:24px">Carrello
+        <i class="material-icons" style="font-size:24px; vertical-align:-4px;">shopping_cart</i>
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-mobile" style="margin-top:21px; font-size:24px">Accedi
+        <i class="material-icons" style="font-size:24px; vertical-align:-4px;">account_box</i>
+      </a>
+    </div>
+
+    <div class="w3-container w3-mobile">
+      <h2 style="font-size: 38px;">Prodotto</h2>
+      <div id="canvas-container" style="width: 50vw; height: 500px; background: white;"></div>
+    </div>
+
+    <script src="lib/three.min.js"></script>
+    <script src="lib/stats.min.js"></script>
+    <script src="lib/OrbitControls.js"></script>
+    <script src="lib/OBJLoader.js"></script>
+
+    <!-- shaders -->
+
+		<script type="text/x-glsl" id="vertex">
+		varying vec3 vNormal;
+		varying vec3 vPosition;
+
+		void main() {
+			vec4 vPos = modelViewMatrix * vec4( position, 1.0 );
+			vPosition = vPos.xyz;
+			vNormal = normalMatrix * normal;
+			gl_Position = projectionMatrix * vPos;
+		}
+		</script>
+
+		<script type="text/x-glsl" id="fragment">
+			varying vec3 vNormal;
+			varying vec3 vPosition;
+			uniform vec3 pointLightPosition1; // in world space
+			uniform vec3 pointLightPosition2; // in world space
+			uniform vec3 pointLightPosition3; // in world space
+			uniform vec3 pointLightPosition4; // in world space
+			uniform vec3 clight;
+			uniform vec3 cspec;
+			uniform float roughness;
+			const float PI = 3.14159;
+
+			vec3 FSchlick(float lDoth) {
+				return (cspec + (vec3(1.0)-cspec)*pow(1.0 - lDoth,5.0));
+			}
+
+			float DGGX(float nDoth, float alpha) {
+				float alpha2 = alpha*alpha;
+				float d = nDoth*nDoth*(alpha2-1.0)+1.0;
+				return (  alpha2 / (PI*d*d));
+			}
+
+			float G1(float dotProduct, float k) {
+				return (dotProduct / (dotProduct*(1.0-k) + k) );
+			}
+
+			float GSmith(float nDotv, float nDotl) {
+					float k = roughness*roughness;
+					return G1(nDotl,k)*G1(nDotv,k);
+			}
+
+			void main() {
+				vec4 lPosition = viewMatrix * vec4( pointLightPosition1, 1.0 );
+				vec3 l = normalize(lPosition.xyz - vPosition.xyz);
+				vec3 n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				vec3 v = normalize( -vPosition);
+				vec3 h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				float nDotl = max(dot( n, l ),0.000001);
+				float lDoth = max(dot( l, h ),0.000001);
+				float nDoth = max(dot( n, h ),0.000001);
+				float vDoth = max(dot( v, h ),0.000001);
+				float nDotv = max(dot( n, v ),0.000001);
+				vec3 specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance1 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition2, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance2 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition3, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance3 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition4, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance4 = PI* clight * nDotl * specularBRDF;
+
+				vec3 outRadiance = outRadiance1 + outRadiance2 + outRadiance3 + outRadiance4;
+				// gamma encode the final value
+				gl_FragColor = vec4(pow( outRadiance, vec3(1.0/2.2)), 1.0);
+				//gl_FragColor = vec4(outRadiance,1.0);
+			}
+		</script>
+
+    <script src=scripts/portaprova.js></script>
+
+
+    <br>
+    <br>
+    <div class="w3-row w3-center w3-small w3-amber w3-padding w3-mobile">
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>ACME Corporation</h5>
+          <a href="#" style="font-size: 14px;">Chi siamo</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Note legali</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Lavora per noi</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Spazio aziende</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Informazioni</h5>
+          <a href="#" style="font-size: 14px;">Metodi di pagamento</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Spedizioni</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Garanzia clienti ACME</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Resi e sostituzioni</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Spazio vendita</h5>
+          <a href="#" style="font-size: 14px;">Vendere su ACME</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Garanzia venditori</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Tariffe Business</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Promozione prodotti</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Aiuto</h5>
+          <a href="#" style="font-size: 14px;">Servizio clienti</a>
+          <br>
+          <a href="#" style="font-size: 14px;">FAQ</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Forum</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-bar w3-amber"></div>
+
+  </body>
+</html>

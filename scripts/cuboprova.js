@@ -18,6 +18,7 @@ function init() {
   w = container.offsetWidth;
   h = container.offsetHeight;
   renderer.setSize(w, h);
+  renderer.setClearColor( 0xf0f0f0 );
   container.appendChild(renderer.domElement);
 
   // Create camera.
