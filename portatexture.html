@@ -166,29 +166,6 @@
 			//var ourMaterial = new THREE.MeshBasicMaterial({ map: diffuseMap });
 			//geometry = new THREE.SphereBufferGeometry( 2, 32, 32 );
 
-      // instantiate a loader
-			var loader = new THREE.OBJLoader();
-			// load a resource
-			loader.load(
-				// resource URL
-				'model/Door_Component_BI3.obj',
-				// Function when resource is loaded
-				function ( object ) {
-					//object.scale.set(0.1, 0.1, 0.1);
-					//object.position.set(0, -175, 0);
-					//scene.add( object );
-					console.log(object);
-
-					geometry = object.children[0].geometry;
-					mesh = new THREE.Mesh( geometry,ourMaterial );
-					scene.add( mesh );
-
-					geometry1 = object.children[1].geometry;
-					mesh1 = new THREE.Mesh( geometry1, ourMaterial );
-					scene.add( mesh1 );
-				}
-			);
-
 
 
 
@@ -201,7 +178,7 @@
 																														lightMesh.position.y,
 																														lightMesh.position.z);
 
-			var gui;
+			//var gui;
 			var stats = new Stats();
 
 			function loadTexture(file) {
@@ -218,6 +195,29 @@
 			}
 
 			function init() {
+
+				// instantiate a loader
+				var loader = new THREE.OBJLoader();
+				// load a resource
+				loader.load(
+					// resource URL
+					'model/Door_Component_BI3.obj',
+					// Function when resource is loaded
+					function ( object ) {
+						//object.scale.set(0.1, 0.1, 0.1);
+						//object.position.set(0, -175, 0);
+						//scene.add( object );
+						console.log(object);
+
+						geometry = object.children[0].geometry;
+						mesh = new THREE.Mesh( geometry,ourMaterial );
+						scene.add( mesh );
+
+						geometry1 = object.children[1].geometry;
+						mesh1 = new THREE.Mesh( geometry1, ourMaterial );
+						scene.add( mesh1 );
+					}
+				);
 
 				renderer.setClearColor( 0xf0f0f0 );
 
@@ -239,22 +239,12 @@
 				//controls.target.copy( mesh.position );
 				controls.update();
 
-				window.addEventListener( 'resize', onResize, false );
-
 
 			  stats.domElement.style.position = 'absolute';
 			  stats.domElement.style.top = '0px';
 			  document.body.appendChild( stats.domElement );
 
 				ourMaterial.needsUpdate = true;
-
-			}
-
-			function onResize() {
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				camera.aspect = ( window.innerWidth / window.innerHeight );
-				camera.updateProjectionMatrix();
 
 			}
 
@@ -269,7 +259,7 @@
 
 			}
 
-			function clearGui() {
+			/*function clearGui() {
 
 				if ( gui ) gui.destroy();
 				gui = new dat.GUI();
@@ -297,7 +287,7 @@
 					render()});
 				textureSettings.add(textureParameters,'repeatS').min(0.1).max(10).onChange( function( newVal ) {render()});
 				textureSettings.add(textureParameters,'repeatT').min(0.1).max(10).onChange( function( newVal ) {render()});
-				}
+			}*/
 
 			function updateUniforms() {
 
@@ -312,7 +302,7 @@
 			}
 
 			init();
-			buildGui();
+			//buildGui();
 			update();
 			render();
 

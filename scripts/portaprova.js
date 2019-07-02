@@ -1,3 +1,7 @@
+function showGoldDoor(){
+
+document.getElementById('canvas-container').innerHTML = "";
+
 var scene, renderer, camera, stats, controls, ourMaterial, container, w, h;
 
 // default: white, 1.0 intensity
@@ -54,27 +58,6 @@ function init() {
   // Create scene.
   scene = new THREE.Scene();
 
-  /*// Create material
-  material = new THREE.MeshPhongMaterial();
-
-  // Create cube and add to scene.
-  var geometry = new THREE.BoxGeometry(150, 150, 150);
-  mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);*/
-
-  /*scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(75, w / h, 1, 1000);
-  controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
-  renderer = new THREE.WebGLRenderer({antialias: true});
-  container = document.getElementById('canvas-container');
-  w = container.offsetWidth;
-  h = container.offsetHeight;
-  renderer.setSize(w, h);
-  renderer.setClearColor( 0xf0f0f0 );
-  renderer.gammaInput = true;
-  renderer.gammaOutput = true;
-  container.appendChild(renderer.domElement);
-*/
   ourMaterial = new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
 
 
@@ -173,3 +156,4 @@ addEventListener('resize', function() {
 
 init();
 animate();
+}
