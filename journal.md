@@ -33,3 +33,11 @@
 * Creazione della repository del progetto.
 * Varie prove di materiali e texture sul modello della porta utilizzando gli shader visti a lezione.
 * Aggiornamento journal.
+
+# 2 luglio 2019
+
+* Lavori sui font della pagina web.
+* Prove di rendering del modello nella pagina web.
+* Varie prove di posizionamento delle luci.
+* Sistemazione elementi pagina web.
+* Aggiornamento journal.
