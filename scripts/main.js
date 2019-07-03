@@ -1,8 +1,8 @@
-var scene, meshFrame, meshDoor, meshLatch, meshHandle, doorMaterial, lockMaterial;
+var scene, renderer, meshFrame, meshDoor, meshLatch, meshHandle, doorMaterial, lockMaterial;
 
 function mainFunction(){
 
-  var renderer, camera, stats, controls, ourMaterial, container, w, h;
+  var camera, stats, controls, ourMaterial, container, w, h;
 
 
   function init() {
