@@ -6,7 +6,7 @@ var renderer = new THREE.WebGLRenderer( { antialias: true } );
 var container = document.getElementById('canvas-container');
 var w = container.offsetWidth;
 var h = container.offsetHeight;
-var camera = new THREE.PerspectiveCamera( 35, w / h, 1, 1000 );
+var camera = new THREE.PerspectiveCamera( 70, w / h, 0.1, 1000 );
 //var controls = new THREE.OrbitControls( camera, renderer.domElement );
 var controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
 var scene = new THREE.Scene();
@@ -88,19 +88,31 @@ function init() {
       //scene.add( object );
       console.log(object);
 
-      geometry = object.children[0].geometry;
-      mesh = new THREE.Mesh( geometry,ourMaterial );
-      scene.add( mesh );
+      //telaio della porta
+      geometryFrame = object.children[0].geometry;
+      meshFrame = new THREE.Mesh( geometryFrame, ourMaterial );
+      scene.add( meshFrame );
 
-      geometry1 = object.children[1].geometry;
-      mesh1 = new THREE.Mesh( geometry1, ourMaterial );
-      scene.add( mesh1 );
+      //porta
+      geometryDoor = object.children[1].geometry;
+      meshDoor = new THREE.Mesh( geometryDoor, ourMaterial );
+      scene.add( meshDoor );
+
+      //scrocco serratura
+      geometryLatch = object.children[2].geometry;
+      meshLatch = new THREE.Mesh( geometryLatch, ourMaterial );
+      scene.add( meshLatch );
+
+      //maniglia
+      geometryHandle = object.children[3].geometry;
+      meshHandle = new THREE.Mesh( geometryHandle, ourMaterial );
+      scene.add( meshHandle );
     }
   );
 
   renderer.setClearColor( 0xf0f0f0 );
 
-  camera.position.set( 0, 10, 10 );
+  camera.position.set( 0, 0, 10 );
   scene.add( camera );
 
   //scene.add( mesh );

@@ -1,6 +1,6 @@
 var scene, meshFrame;
 
-function showGoldDoor(){
+function showTextureDoor1(){
 
 document.getElementById('canvas-container').innerHTML = "";
 
@@ -14,26 +14,30 @@ var lightParameters = {
   intensity: 1.0,
 }
 
-// default: gold
-var cspec = {
-  red: 1.0,
-  green: 0.71,
-  blue: 0.29,
-  roughness: 0.54
+var textureParameters = {
+  material: "Wood_StaggeredFloorPlanks",
+  repeatS: 1.0,
+  repeatT: 1.0,
 }
 
+var diffuseMap = loadTexture( "textures/" + textureParameters.material + "_Diffuse.png" );
+var specularMap = loadTexture( "textures/" + textureParameters.material + "_Specular.png" );
+var roughnessMap = loadTexture( "textures/" + textureParameters.material + "_Roughness.png" );
+
 var uniforms = {
-      cspec:	{ type: "v3", value: new THREE.Vector3() },
-      roughness: {type: "f", value: 0.5},
+      specularMap: { type: "t", value: specularMap},
+      diffuseMap:	{ type: "t", value: diffuseMap},
+      roughnessMap:	{ type: "t", value: roughnessMap},
       pointLightPosition1:	{ type: "v3", value: new THREE.Vector3() },
       pointLightPosition2:	{ type: "v3", value: new THREE.Vector3() },
       pointLightPosition3:	{ type: "v3", value: new THREE.Vector3() },
       pointLightPosition4:	{ type: "v3", value: new THREE.Vector3() },
       clight:	{ type: "v3", value: new THREE.Vector3() },
+      textureRepeat: { type: "v2", value: new THREE.Vector2(1,1) }
     };
 
-vs = document.getElementById("vertex").textContent;
-fs = document.getElementById("fragment").textContent;
+vs = document.getElementById("vertex-texture").textContent;
+fs = document.getElementById("fragment-texture").textContent;
 
 function init() {
 
@@ -54,7 +58,7 @@ function init() {
 
   // Create camera.
   //camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
-  camera = new THREE.PerspectiveCamera(70, w / h, 1, 10000);
+  camera = new THREE.PerspectiveCamera( 70, w / h, 1, 10000 );
   camera.position.z = 10;
 
   // Create scene.
@@ -146,13 +150,16 @@ function init() {
 
   controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
 
-  camera.position.set( 0, 10, 400 );
-  uniforms.cspec.value = new THREE.Vector3(cspec.red,cspec.green,cspec.blue);
-  uniforms.roughness.value = cspec.roughness>0.0?cspec.roughness:0.01;
+  camera.position.set( 0, 0, 400 );
+
   uniforms.clight.value = new THREE.Vector3(
       lightParameters.red * lightParameters.intensity,
       lightParameters.green * lightParameters.intensity,
       lightParameters.blue * lightParameters.intensity);
+  uniforms.textureRepeat.value = new THREE.Vector2( textureParameters.repeatS, textureParameters.repeatT);
+  uniforms.diffuseMap.value = diffuseMap;
+  uniforms.specularMap.value = specularMap;
+  uniforms.roughnessMap.value = roughnessMap;
 
 }
 
@@ -166,10 +173,31 @@ function animate() {
   renderer.render(scene, camera);
 }
 
+function loadTexture(file) {
+    var texture = new THREE.TextureLoader().load( file , function ( texture ) {
+
+      texture.minFilter = THREE.LinearMipMapLinearFilter;
+      texture.anisotropy = renderer.getMaxAnisotropy();
+      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+      texture.offset.set( 0, 0 );
+      texture.needsUpdate = true;
+      //render();
+    } )
+    return texture;
+}
+
 addEventListener('resize', function() {
   location.reload();
 });
 
 init();
 animate();
+}
+
+function hideFrame(){
+  scene.remove( meshFrame );
+}
+
+function showFrame(){
+  scene.add( meshFrame );
 }

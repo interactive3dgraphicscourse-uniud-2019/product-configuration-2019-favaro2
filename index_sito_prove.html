@@ -72,12 +72,12 @@
     <div class="w3-show-inline-block">
     <div class="w3-container w3-mobile" style="float:left;">
       <h2>Personalizza</h2>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
+      <button class="w3-button w3-black" onclick="showTextureDoor1()">texture</button>
+      <button class="w3-button w3-black" onclick="showGoldDoor()">gold</button>
       <br>
       <br>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
+      <button class="w3-button w3-black" onclick="hideFrame()">hide</button>
+      <button class="w3-button w3-black" onclick="showFrame()">show</button>
       <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
       <br>
       <br>
@@ -227,7 +227,10 @@
 			varying vec3 vNormal;
 			varying vec3 vPosition;
 			varying vec2 uVv;
-			uniform vec3 pointLightPosition; // in world space
+      uniform vec3 pointLightPosition1; // in world space
+			uniform vec3 pointLightPosition2; // in world space
+			uniform vec3 pointLightPosition3; // in world space
+			uniform vec3 pointLightPosition4; // in world space
 			uniform vec3 clight;
 			uniform sampler2D specularMap;
 			uniform sampler2D diffuseMap;
@@ -259,7 +262,15 @@
 			}
 
 			void main() {
-				vec4 lPosition = viewMatrix * vec4( pointLightPosition, 1.0 );
+        cdiff = texture2D( diffuseMap, uVv*textureRepeat ).rgb;
+				// texture in sRGB, linearize
+				cdiff = pow( cdiff, vec3(2.2));
+				cspec = texture2D( specularMap, uVv*textureRepeat ).rgb;
+				// texture in sRGB, linearize
+				cspec = pow( cspec, vec3(2.2));
+				roughness = texture2D( roughnessMap, uVv*textureRepeat).r; // no need to linearize roughness map
+
+				vec4 lPosition = viewMatrix * vec4( pointLightPosition1, 1.0 );
 				vec3 l = normalize(lPosition.xyz - vPosition.xyz);
 				vec3 n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
 				vec3 v = normalize( -vPosition);
@@ -271,18 +282,67 @@
 				float vDoth = max(dot( v, h ),0.000001);
 				float nDotv = max(dot( n, v ),0.000001);
 
-				cdiff = texture2D( diffuseMap, uVv*textureRepeat ).rgb;
-				// texture in sRGB, linearize
-				cdiff = pow( cdiff, vec3(2.2));
-				cspec = texture2D( specularMap, uVv*textureRepeat ).rgb;
-				// texture in sRGB, linearize
-				cspec = pow( cspec, vec3(2.2));
-				roughness = texture2D( roughnessMap, uVv*textureRepeat).r; // no need to linearize roughness map
-
 				vec3 fresnel = FSchlick(lDoth);
 				vec3 BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
 					(4.0*nDotl*nDotv);
-				vec3 outRadiance = PI* clight * nDotl * BRDF;
+				vec3 outRadiance1 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition2, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance2 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition3, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance3 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition4, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance4 = PI* clight * nDotl * BRDF;
+
+
+        vec3 outRadiance = outRadiance1 + outRadiance2 + outRadiance3 + outRadiance4;
 				// gamma encode the final value
 				gl_FragColor = vec4(pow( outRadiance, vec3(1.0/2.2)), 1.0);
 			}
@@ -290,6 +350,7 @@
 
     <script src=scripts/portaprova.js></script>
     <script src=scripts/provatexture.js></script>
+    <script src=scripts/textureprova.js></script>
 
 
     <br>
