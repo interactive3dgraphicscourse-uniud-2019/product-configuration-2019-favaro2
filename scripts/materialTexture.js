@@ -42,33 +42,10 @@ uniforms.diffuseMap.value = diffuseMap;
 uniforms.specularMap.value = specularMap;
 uniforms.roughnessMap.value = roughnessMap;
 
-var lightMesh1 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
-  new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
-lightMesh1.position.set( 300, 300, 800 );
-uniforms.pointLightPosition1.value = new THREE.Vector3(lightMesh1.position.x,
-lightMesh1.position.y,
-lightMesh1.position.z);
-
-var lightMesh2 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
-  new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
-lightMesh2.position.set( -300, 300, -800 );
-uniforms.pointLightPosition2.value = new THREE.Vector3(lightMesh2.position.x,
-lightMesh2.position.y,
-lightMesh2.position.z);
-
-var lightMesh3 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
-  new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
-lightMesh3.position.set( -300, 300, 800 );
-uniforms.pointLightPosition3.value = new THREE.Vector3(lightMesh3.position.x,
-lightMesh3.position.y,
-lightMesh3.position.z);
-
-var lightMesh4 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
-  new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
-lightMesh4.position.set( 300, 300, -800 );
-uniforms.pointLightPosition4.value = new THREE.Vector3(lightMesh4.position.x,
-lightMesh4.position.y,
-lightMesh4.position.z);
+uniforms.pointLightPosition1.value = new THREE.Vector3(lightMesh1.position.x, lightMesh1.position.y, lightMesh1.position.z);
+uniforms.pointLightPosition2.value = new THREE.Vector3(lightMesh2.position.x, lightMesh2.position.y, lightMesh2.position.z);
+uniforms.pointLightPosition3.value = new THREE.Vector3(lightMesh3.position.x, lightMesh3.position.y, lightMesh3.position.z);
+uniforms.pointLightPosition4.value = new THREE.Vector3(lightMesh4.position.x, lightMesh4.position.y, lightMesh4.position.z);
 
 
 return new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
