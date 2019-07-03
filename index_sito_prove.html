@@ -39,7 +39,7 @@
 
     </style>
   </head>
-  <body onload="showGoldDoor()">
+  <body onload="mainFunction()">
     <div class="w3-bar w3-amber">
       <a class="w3-bar-item w3-button w3-large w3-mobile">
         <img src="pics/Acme-corp.png" style="width:149px; height:68px; border:0;">
@@ -72,17 +72,12 @@
     <div class="w3-show-inline-block">
     <div class="w3-container w3-mobile" style="float:left;">
       <h2>Personalizza</h2>
-      <button class="w3-button w3-black" onclick="showTextureDoor1()">texture</button>
-      <button class="w3-button w3-black" onclick="showGoldDoor()">gold</button>
+      <button class="w3-button w3-black" onclick="changeDoorMaterial(0)">texture</button>
+      <button class="w3-button w3-black" onclick="changeDoorMaterial(1)">gold</button>
       <br>
       <br>
       <button class="w3-button w3-black" onclick="hideFrame()">hide</button>
       <button class="w3-button w3-black" onclick="showFrame()">show</button>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
-      <br>
-      <br>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
-      <button class="w3-button w3-black" onclick="showTexturedDoor()">Black</button>
       <br>
       <br>
       <br>
@@ -93,6 +88,9 @@
     <script src="lib/stats.min.js"></script>
     <script src="lib/OrbitControls.js"></script>
     <script src="lib/OBJLoader.js"></script>
+
+    <script src="scripts/lightsSetup.js"></script>
+
 
     <!-- shaders -->
 
@@ -348,8 +346,8 @@
 			}
 		</script>
 
-    <script src=scripts/portaprova.js></script>
-    <script src=scripts/textureprova.js></script>
+
+    <script src=scripts/main.js></script>
     <script src=scripts/materialGold.js></script>
     <script src=scripts/materialTexture.js></script>
 
