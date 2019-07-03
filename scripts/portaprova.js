@@ -1,13 +1,13 @@
-var scene, meshFrame;
+var scene, meshFrame, renderer;
 
 function showGoldDoor(){
 
 document.getElementById('canvas-container').innerHTML = "";
 
-var renderer, camera, stats, controls, ourMaterial, container, w, h;
+var camera, stats, controls, ourMaterial, container, w, h;
 
 // default: white, 1.0 intensity
-var lightParameters = {
+/*var lightParameters = {
   red: 1.0,
   green: 1.0,
   blue: 1.0,
@@ -33,7 +33,7 @@ var uniforms = {
     };
 
 vs = document.getElementById("vertex").textContent;
-fs = document.getElementById("fragment").textContent;
+fs = document.getElementById("fragment").textContent;*/
 
 function init() {
 
@@ -60,7 +60,7 @@ function init() {
   // Create scene.
   scene = new THREE.Scene();
 
-  ourMaterial = new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
+  //ourMaterial = new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
 
 
   // instantiate a loader
@@ -78,35 +78,35 @@ function init() {
 
       //telaio della porta
       geometryFrame = object.children[0].geometry;
-      meshFrame = new THREE.Mesh( geometryFrame, ourMaterial );
+      meshFrame = new THREE.Mesh( geometryFrame, getGoldMaterial() );
       meshFrame.scale.set(200, 200, 200);
       meshFrame.position.y = -200;
       scene.add( meshFrame );
 
       //porta
       geometryDoor = object.children[1].geometry;
-      meshDoor = new THREE.Mesh( geometryDoor, ourMaterial );
+      meshDoor = new THREE.Mesh( geometryDoor, getGoldMaterial() );
       meshDoor.scale.set(200, 200, 200);
       meshDoor.position.y = -200;
       scene.add( meshDoor );
 
       //scrocco serratura
       geometryLatch = object.children[2].geometry;
-      meshLatch = new THREE.Mesh( geometryLatch, ourMaterial );
+      meshLatch = new THREE.Mesh( geometryLatch, getGoldMaterial() );
       meshLatch.scale.set(200, 200, 200);
       meshLatch.position.y = -200;
       scene.add( meshLatch );
 
       //maniglia
       geometryHandle = object.children[3].geometry;
-      meshHandle = new THREE.Mesh( geometryHandle, ourMaterial );
+      meshHandle = new THREE.Mesh( geometryHandle, getGoldMaterial() );
       meshHandle.scale.set(200, 200, 200);
       meshHandle.position.y = -200;
       scene.add( meshHandle );
     }
   );
 
-  var lightMesh1 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
+  /*var lightMesh1 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
     new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
   lightMesh1.position.set( 300, 300, 800 );
   uniforms.pointLightPosition1.value = new THREE.Vector3(lightMesh1.position.x,
@@ -137,7 +137,7 @@ function init() {
   scene.add(lightMesh1);
   scene.add(lightMesh2);
   scene.add(lightMesh3);
-  scene.add(lightMesh4);
+  scene.add(lightMesh4);*/
 
   stats = new Stats();
   stats.domElement.style.position = 'absolute';
@@ -147,12 +147,14 @@ function init() {
   controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
 
   camera.position.set( 0, 10, 400 );
-  uniforms.cspec.value = new THREE.Vector3(cspec.red,cspec.green,cspec.blue);
+
+
+  /*uniforms.cspec.value = new THREE.Vector3(cspec.red,cspec.green,cspec.blue);
   uniforms.roughness.value = cspec.roughness>0.0?cspec.roughness:0.01;
   uniforms.clight.value = new THREE.Vector3(
       lightParameters.red * lightParameters.intensity,
       lightParameters.green * lightParameters.intensity,
-      lightParameters.blue * lightParameters.intensity);
+      lightParameters.blue * lightParameters.intensity);*/
 
 }
 

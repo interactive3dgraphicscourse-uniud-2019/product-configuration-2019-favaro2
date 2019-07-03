@@ -1,10 +1,10 @@
-var scene, meshFrame;
+var scene, meshFrame, renderer;
 
 function showTextureDoor1(){
 
 document.getElementById('canvas-container').innerHTML = "";
 
-var renderer, camera, stats, controls, ourMaterial, container, w, h;
+var camera, stats, controls, ourMaterial, container, w, h;
 
 // default: white, 1.0 intensity
 var lightParameters = {
@@ -96,14 +96,14 @@ function init() {
 
       //scrocco serratura
       geometryLatch = object.children[2].geometry;
-      meshLatch = new THREE.Mesh( geometryLatch, ourMaterial );
+      meshLatch = new THREE.Mesh( geometryLatch, getGoldMaterial() );
       meshLatch.scale.set(200, 200, 200);
       meshLatch.position.y = -200;
       scene.add( meshLatch );
 
       //maniglia
       geometryHandle = object.children[3].geometry;
-      meshHandle = new THREE.Mesh( geometryHandle, ourMaterial );
+      meshHandle = new THREE.Mesh( geometryHandle, getGoldMaterial() );
       meshHandle.scale.set(200, 200, 200);
       meshHandle.position.y = -200;
       scene.add( meshHandle );
