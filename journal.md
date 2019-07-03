@@ -41,3 +41,12 @@
 * Varie prove di posizionamento delle luci.
 * Sistemazione elementi pagina web.
 * Aggiornamento journal.
+
+# 3 luglio 2019
+
+* Prove di visualizzazione del modello nella pagina web con cambio di materiali e mostra/nacondi telaio.
+* Scrittura del codice del file principale di caricamento del modello nella pagina web.
+* Scrittura del codice di prova per la creazione e modifica dei materiali.
+* Scrittura del codice del setup delle luci.
+* Varie prove di sistemazione layout della pagina web.
+* Aggiornamento journal.
