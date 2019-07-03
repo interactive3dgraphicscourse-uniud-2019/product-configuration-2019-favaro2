@@ -1,3 +1,5 @@
+function getTextureMaterial(){
+
 // default: white, 1.0 intensity
 var lightParameters = {
   red: 1.0,
@@ -68,6 +70,10 @@ uniforms.pointLightPosition4.value = new THREE.Vector3(lightMesh4.position.x,
 lightMesh4.position.y,
 lightMesh4.position.z);
 
+
+return new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
+}
+
 //renderer = getRenderer();
 
 function loadTexture(file) {
@@ -81,8 +87,4 @@ function loadTexture(file) {
       //render();
     } )
     return texture;
-}
-
-function getTextureMaterial(){
-  return new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vs, fragmentShader: fs });
 }
