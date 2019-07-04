@@ -50,3 +50,13 @@
 * Scrittura del codice del setup delle luci.
 * Varie prove di sistemazione layout della pagina web.
 * Aggiornamento journal.
+
+# 4 luglio 2019
+
+* Creazione dei pulsanti per cambio materiali maniglia e porta (con materiali di prova).
+* Creazione funzioni per il cambio dei materiali.
+* Ricerca delle texture.
+* Trovate texture di mogano e altro legno.
+* Varie prove con le texture trovate.
+* Modifiche ai pulsanti e al layout della pagina web.
+* Aggiornamento journal.
