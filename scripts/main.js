@@ -116,8 +116,8 @@ function changeDoorMaterial(m){
     metal = "iron";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
-  } else if (m == "concrete") {
-    texture = "concrete";
+  } else if (m == "wood29") {
+    texture = "wood29";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
   }

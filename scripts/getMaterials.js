@@ -9,7 +9,7 @@ function getMetal(metal){
 function getTexture(texture){
   if (texture == "wood"){
     return "Wood_StaggeredFloorPlanks";
-  } else if (texture == "concrete"){
-    return "Concrete_RockyFoundation";
+  } else if (texture == "wood29"){
+    return "Wood29";
   }
 }

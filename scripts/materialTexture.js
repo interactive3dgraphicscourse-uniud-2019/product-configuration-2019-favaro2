@@ -16,9 +16,9 @@ function getTextureMaterial(){
     repeatT: 1.0,
   }
 
-  var diffuseMap = loadTexture( "textures/" + textureParameters.material + "_Diffuse.png" );
-  var specularMap = loadTexture( "textures/" + textureParameters.material + "_Specular.png" );
-  var roughnessMap = loadTexture( "textures/" + textureParameters.material + "_Roughness.png" );
+  var diffuseMap = loadTexture( "textures/" + textureParameters.material + "_col.png" );
+  var specularMap = loadTexture( "textures/" + textureParameters.material + "_spc.png" );
+  var roughnessMap = loadTexture( "textures/" + textureParameters.material + "_rgh.png" );
 
   var uniforms = {
         specularMap: { type: "t", value: specularMap},
