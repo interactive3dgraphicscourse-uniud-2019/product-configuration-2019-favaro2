@@ -12,22 +12,6 @@ function getMetalMaterial(){
 
   var cspec = getMetal(metal);
 
-  // default: gold
-  /*var cspec = {
-    red: 1.0,
-    green: 0.71,
-    blue: 0.29,
-    roughness: 0.54
-  }*/
-
-  // iron
-  /*var cspec = {
-    red: 0.56,
-    green: 0.57,
-    blue: 0.58,
-    roughness: 0.54
-  }*/
-
   var uniforms = {
         cspec:	{ type: "v3", value: new THREE.Vector3() },
         roughness: {type: "f", value: 0.5},

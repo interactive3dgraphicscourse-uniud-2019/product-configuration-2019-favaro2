@@ -104,8 +104,8 @@ function mainFunction(){
 }
 
 function changeDoorMaterial(m){
-  if (m == "wood") {
-    texture = "wood";
+  if (m == "mahogany") {
+    texture = "mahogany";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
   } else if (m == "gold") {

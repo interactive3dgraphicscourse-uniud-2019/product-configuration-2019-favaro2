@@ -7,8 +7,8 @@ function getMetal(metal){
 }
 
 function getTexture(texture){
-  if (texture == "wood"){
-    return "Wood_StaggeredFloorPlanks";
+  if (texture == "mahogany"){
+    return "Mahogany";
   } else if (texture == "wood29"){
     return "Wood29";
   }

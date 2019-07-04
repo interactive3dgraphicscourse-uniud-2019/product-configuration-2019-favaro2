@@ -1,4 +1,4 @@
-var texture = "wood";
+var texture = "wood29";
 
 function getTextureMaterial(){
 
@@ -16,9 +16,9 @@ function getTextureMaterial(){
     repeatT: 1.0,
   }
 
-  var diffuseMap = loadTexture( "textures/" + textureParameters.material + "_col.png" );
-  var specularMap = loadTexture( "textures/" + textureParameters.material + "_spc.png" );
-  var roughnessMap = loadTexture( "textures/" + textureParameters.material + "_rgh.png" );
+  var diffuseMap = loadTexture( "textures/" + textureParameters.material + "_col.jpg" );
+  var specularMap = loadTexture( "textures/" + textureParameters.material + "_spc.jpg" );
+  var roughnessMap = loadTexture( "textures/" + textureParameters.material + "_rgh.jpg" );
 
   var uniforms = {
         specularMap: { type: "t", value: specularMap},
