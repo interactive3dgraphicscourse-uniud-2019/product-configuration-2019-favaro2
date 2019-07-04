@@ -74,7 +74,7 @@ function mainFunction(){
 
     controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
 
-    camera.position.set( 0, 10, 400 );
+    camera.position.set( 0, 10, 450 );
 
     //show lights setup
     scene.add(lightMesh1);
