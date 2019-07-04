@@ -25,8 +25,8 @@ function mainFunction(){
     // Create scene.
     scene = new THREE.Scene();
 
-    doorMaterial = getGoldMaterial();
-    lockMaterial = getGoldMaterial();
+    doorMaterial = getTextureMaterial();
+    lockMaterial = getMetalMaterial();
 
     // instantiate a loader
     var loader = new THREE.OBJLoader();
@@ -103,15 +103,38 @@ function mainFunction(){
   animate();
 }
 
-function changeDoorMaterial(n){
-  if (n==0) {
+function changeDoorMaterial(m){
+  if (m == "wood") {
+    texture = "wood";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
-  } else {
-    meshFrame.material = getGoldMaterial();
-    meshDoor.material = getGoldMaterial();
+  } else if (m == "gold") {
+    metal = "gold";
+    meshFrame.material = getMetalMaterial();
+    meshDoor.material = getMetalMaterial();
+  } else if (m == "iron") {
+    metal = "iron";
+    meshFrame.material = getMetalMaterial();
+    meshDoor.material = getMetalMaterial();
+  } else if (m == "concrete") {
+    texture = "concrete";
+    meshFrame.material = getTextureMaterial();
+    meshDoor.material = getTextureMaterial();
   }
 }
+
+function changeHandleMaterial(m){
+  if (m == "gold") {
+    metal = "gold";
+    meshHandle.material = getMetalMaterial();
+    meshLatch.material = getMetalMaterial();
+  } else if (m == "iron") {
+    metal = "iron";
+    meshHandle.material = getMetalMaterial();
+    meshLatch.material = getMetalMaterial();
+  }
+}
+
 
 function hideFrame(){
   scene.remove( meshFrame );
