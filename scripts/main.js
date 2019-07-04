@@ -68,8 +68,8 @@ function mainFunction(){
     );
 
     stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.top = '0px';
+    //stats.domElement.style.position = 'absolute';
+    //stats.domElement.style.top = '0px';
     document.body.appendChild( stats.domElement );
 
     controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
