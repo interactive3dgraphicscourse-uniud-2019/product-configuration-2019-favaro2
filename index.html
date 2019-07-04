@@ -75,6 +75,8 @@
       <h2 style="font-size: 38px;">Porta da interni ACME</h2>
     <div class="w3-container w3-half">
       <div id="canvas-container" style="width: 45vw; height: 600px; background: white;"></div>
+      <h3>Clicca sopra per ruotare e fare zoom</h3>
+      <h5>Dimensioni: altezza 250cm - larghezza 100cm - profondità 35cm - spessore porta 4cm</h5>
     </div>
     <div class="w3-container w3-half" style="float: right">
       <h2>Personalizza</h2>
@@ -106,11 +108,22 @@
         <p>ferro</p>
       </div>
       <br>
-      <h3>Mostra/Nascondi telaio</h3>
+      <h3>Nascondi/Mostra telaio</h3>
       <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="hideFrame()">nascondi</button>
       <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="showFrame()">mostra</button>
-      <p id="price">Prezzo: 123 €</p>
-      <p>Spedizione GRATUITA</p>
+      <br>
+      <br>
+      <p id="price" class="w3-padding" style="font-size : 24px; border-style: solid; display:inline;">Prezzo: 123 €</p>
+      <br>
+      <br>
+      <form style="vertical-align: center">
+        Quantità:
+        <input type="number" name="quantity" min="1" max="10" step="1" value="1">
+        <button class="w3-button w3-amber w3-border">Aggiungi al carrello
+          <i class="material-icons" style="font-size:24px; vertical-align:-4px;">shopping_cart</i>
+        </button>
+      </form>
+      <p>Spedizione GRATUITA in tutta Italia con servizio di consegna ACME</p>
       <br>
     </div>
     </div>
@@ -413,7 +426,7 @@
           <h5>Informazioni</h5>
           <a href="#" style="font-size: 14px;">Metodi di pagamento</a>
           <br>
-          <a href="#" style="font-size: 14px;">Spedizioni</a>
+          <a href="#" style="font-size: 14px;">Servizio di consegna ACME</a>
           <br>
           <a href="#" style="font-size: 14px;">Garanzia clienti ACME</a>
           <br>
@@ -423,7 +436,7 @@
       <div class="w3-col l3 m6 s12 w3-mobile">
         <div class="top10">
           <h5>Spazio vendita</h5>
-          <a href="#" style="font-size: 14px;">Vendere su ACME</a>
+          <a href="#" style="font-size: 14px;">Vendere con ACME</a>
           <br>
           <a href="#" style="font-size: 14px;">Garanzia venditori</a>
           <br>
