@@ -16,7 +16,15 @@
       font-size: 20px;
     }
 
+    h1 {
+      font-family: 'Acme';
+    }
+
     h2 {
+      font-family: 'Acme';
+    }
+
+    h3 {
       font-family: 'Acme';
     }
 
@@ -64,23 +72,57 @@
     </div>
 
     <div class="w3-row-padding">
-      <h2 style="font-size: 38px;">Prodotto</h2>
+      <h2 style="font-size: 38px;">Porta da interni ACME</h2>
     <div class="w3-container w3-half">
-      <div id="canvas-container" style="width: 45vw; height: 500px; background: white;"></div>
+      <div id="canvas-container" style="width: 45vw; height: 600px; background: white;"></div>
     </div>
     <div class="w3-container w3-half" style="float: right">
       <h2>Personalizza</h2>
-      <button class="w3-button w3-black" onclick="changeDoorMaterial(0)">texture</button>
-      <button class="w3-button w3-black" onclick="changeDoorMaterial(1)">gold</button>
+      <h3>Porta</h3>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('wood')">
+        <img src="textures/Wood_StaggeredFloorPlanks_Diffuse.png" style="width: 40px; height: 40px;">
+        <p>legno</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('concrete')">
+        <img src="textures/Concrete_RockyFoundation_Diffuse.png" style="width: 40px; height: 40px;">
+        <p>cemento</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('gold')">
+        <img src="pics/gold.png" style="width: 40px; height: 40px;">
+        <p>oro</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('iron')">
+        <img src="pics/iron.png" style="width: 40px; height: 40px;">
+        <p>ferro</p>
+      </div>
       <br>
+      <h3>Maniglia</h3>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeHandleMaterial('gold')">
+        <img src="pics/gold.png" style="width: 40px; height: 40px;">
+        <p>oro</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeHandleMaterial('iron')">
+        <img src="pics/iron.png" style="width: 40px; height: 40px;">
+        <p>ferro</p>
+      </div>
       <br>
-      <button class="w3-button w3-black" onclick="hideFrame()">hide</button>
-      <button class="w3-button w3-black" onclick="showFrame()">show</button>
-      <br>
-      <br>
+      <h3>Mostra/Nascondi telaio</h3>
+      <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="hideFrame()">nascondi</button>
+      <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="showFrame()">mostra</button>
+      <p id="price">Prezzo: 123 €</p>
+      <p>Spedizione GRATUITA</p>
       <br>
     </div>
-  </div>
+    </div>
+    <div class="w3-container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisci elit,
+         sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+          nisi ut aliquid ex ea commodi consequatur.
+          Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
 
     <script src="lib/three.min.js"></script>
     <script src="lib/stats.min.js"></script>
@@ -346,8 +388,9 @@
 
 
     <script src=scripts/main.js></script>
-    <script src=scripts/materialGold.js></script>
+    <script src=scripts/materialMetal.js></script>
     <script src=scripts/materialTexture.js></script>
+    <script src=scripts/getMaterials.js></script>
 
 
     <br>
