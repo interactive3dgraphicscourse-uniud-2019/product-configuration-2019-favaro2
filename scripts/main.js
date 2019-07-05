@@ -42,6 +42,7 @@ function mainFunction(){
         meshFrame = new THREE.Mesh( geometryFrame, doorMaterial );
         meshFrame.scale.set(200, 200, 200);
         meshFrame.position.y = -200;
+        meshFrame.rotation.y = 180 * Math.PI/180;
         scene.add( meshFrame );
 
         //porta
@@ -49,6 +50,7 @@ function mainFunction(){
         meshDoor = new THREE.Mesh( geometryDoor, doorMaterial );
         meshDoor.scale.set(200, 200, 200);
         meshDoor.position.y = -200;
+        meshDoor.rotation.y = 180 * Math.PI/180;
         scene.add( meshDoor );
 
         //scrocco serratura
@@ -56,6 +58,7 @@ function mainFunction(){
         meshLatch = new THREE.Mesh( geometryLatch, lockMaterial );
         meshLatch.scale.set(200, 200, 200);
         meshLatch.position.y = -200;
+        meshLatch.rotation.y = 180 * Math.PI/180;
         scene.add( meshLatch );
 
         //maniglia
@@ -63,6 +66,7 @@ function mainFunction(){
         meshHandle = new THREE.Mesh( geometryHandle, lockMaterial );
         meshHandle.scale.set(200, 200, 200);
         meshHandle.position.y = -200;
+        meshHandle.rotation.y = 180 * Math.PI/180;
         scene.add( meshHandle );
       }
     );
@@ -77,10 +81,10 @@ function mainFunction(){
     camera.position.set( 0, 10, 450 );
 
     //show lights setup
-    scene.add(lightMesh1);
+    /*scene.add(lightMesh1);
     scene.add(lightMesh2);
     scene.add(lightMesh3);
-    scene.add(lightMesh4);
+    scene.add(lightMesh4);*/
 
 
   }
@@ -114,14 +118,24 @@ function changeDoorMaterial(m){
     metal = "gold";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
-  } else if (m == "iron") {
+  } else if (m == "alluminium") {
     doorPrice = 120;
-    metal = "iron";
+    metal = "alluminium";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
   } else if (m == "walnut") {
     doorPrice = 200;
     texture = "walnut";
+    meshFrame.material = getTextureMaterial();
+    meshDoor.material = getTextureMaterial();
+  } else if (m == "pine") {
+    doorPrice = 256;
+    texture = "pine";
+    meshFrame.material = getTextureMaterial();
+    meshDoor.material = getTextureMaterial();
+  } else if (m == "bamboo") {
+    doorPrice = 450;
+    texture = "bamboo";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
   }
@@ -134,10 +148,16 @@ function changeHandleMaterial(m){
     metal = "gold";
     meshHandle.material = getMetalMaterial();
     meshLatch.material = getMetalMaterial();
-  } else if (m == "iron") {
+  } else if (m == "alluminium") {
     handlePrice = 20;
-    metal = "iron";
+    metal = "alluminium";
     meshHandle.material = getMetalMaterial();
+    meshLatch.material = getMetalMaterial();
+  } else if (m == "plastic") {
+    handlePrice = 10;
+    texture = "plastic";
+    meshHandle.material = getTextureMaterial();
+    metal = "alluminium";
     meshLatch.material = getMetalMaterial();
   }
   calcPrice()
