@@ -75,9 +75,12 @@
 
 * Creazione funzione per la modifica dinamica del prezzo in base ai materiali scelti.
 * Completate alcune parti della pagina web.
+* Ricerca di altre texture di legno e di plastica per porta e maniglia.
+* Inserimento delle texture nella pagina.
 * Aggiornamento journal.
 
 TODO OrbitControls
 TODO stats
 TODO dimensioni e prezzi realistici
+TODO descrizione materiali
 TODO cancellare file inutili
