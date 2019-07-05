@@ -17,11 +17,21 @@
 * Alcune prove di rendering di un modello di vaso da fiori.
 * ACME vende qualsiasi cosa, quindi i siti web di riferimento per la creazione della pagina saranno i generici siti di e-commerce in cui è possibile comprare di tutto (Amazon, Ebay).
 * Progettazione su carta della pagina web.
+
+| ![Project webpage](pics/progetto_pagina.jpg) |
+| :------------------------------------------: |
+| Progetto della pagina web |
+
 * Aggiornamento journal.
 
 # 30 giugno 2019
 
 * Prove di realizzazione della pagina web di prova.
+
+| ![First webpage](pics/pagina_prova.png) |
+| :---------------------------------------------: |
+| Realizzazione della pagina web di prova |
+
 * Test di visualizzazione della pagina di prova da dispositivi mobili.
 * Il vaso non convince come prodotto da visualizzare, ricerca di altri oggetti.
 * Trovato il modello di una porta.
@@ -60,3 +70,14 @@
 * Varie prove con le texture trovate.
 * Modifiche ai pulsanti e al layout della pagina web.
 * Aggiornamento journal.
+
+# 4 luglio 2019
+
+* Creazione funzione per la modifica dinamica del prezzo in base ai materiali scelti.
+* Completate alcune parti della pagina web.
+* Aggiornamento journal.
+
+TODO OrbitControls
+TODO stats
+TODO dimensioni e prezzi realistici
+TODO cancellare file inutili
