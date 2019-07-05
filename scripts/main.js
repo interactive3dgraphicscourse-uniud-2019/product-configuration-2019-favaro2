@@ -105,34 +105,42 @@ function mainFunction(){
 
 function changeDoorMaterial(m){
   if (m == "mahogany") {
+    doorPrice = 250;
     texture = "mahogany";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
   } else if (m == "gold") {
+    doorPrice = 10200;
     metal = "gold";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
   } else if (m == "iron") {
+    doorPrice = 120;
     metal = "iron";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
   } else if (m == "wood29") {
+    doorPrice = 200;
     texture = "wood29";
     meshFrame.material = getTextureMaterial();
     meshDoor.material = getTextureMaterial();
   }
+  calcPrice()
 }
 
 function changeHandleMaterial(m){
   if (m == "gold") {
+    handlePrice = 230;
     metal = "gold";
     meshHandle.material = getMetalMaterial();
     meshLatch.material = getMetalMaterial();
   } else if (m == "iron") {
+    handlePrice = 20;
     metal = "iron";
     meshHandle.material = getMetalMaterial();
     meshLatch.material = getMetalMaterial();
   }
+  calcPrice()
 }
 
 
