@@ -1,4 +1,4 @@
-var texture = "wood29";
+var texture = "walnut";
 
 function getTextureMaterial(){
 

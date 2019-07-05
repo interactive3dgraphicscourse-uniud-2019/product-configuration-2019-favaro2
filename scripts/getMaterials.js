@@ -9,7 +9,7 @@ function getMetal(metal){
 function getTexture(texture){
   if (texture == "mahogany"){
     return "Mahogany";
-  } else if (texture == "wood29"){
+  } else if (texture == "walnut"){
     return "Wood29";
   }
 }
