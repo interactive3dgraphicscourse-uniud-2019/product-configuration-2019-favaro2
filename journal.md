@@ -18,7 +18,7 @@
 * ACME vende qualsiasi cosa, quindi i siti web di riferimento per la creazione della pagina saranno i generici siti di e-commerce in cui è possibile comprare di tutto (Amazon, Ebay).
 * Progettazione su carta della pagina web.
 
-| ![Project webpage](pics/progetto_pagina.jpg) |
+| ![Project webpage](pics/progetto_paginaweb.jpg) |
 | :------------------------------------------: |
 | Progetto della pagina web |
 
