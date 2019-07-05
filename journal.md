@@ -81,6 +81,7 @@
 
 TODO OrbitControls
 TODO stats
+TODO camera in mobile
 TODO dimensioni e prezzi realistici
 TODO descrizione materiali
 TODO cancellare file inutili
