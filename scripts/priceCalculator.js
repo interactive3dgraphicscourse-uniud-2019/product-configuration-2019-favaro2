@@ -1,5 +1,5 @@
 var doorPrice = 200;
-var handlePrice = 230;
+var handlePrice = 20;
 
 function calcPrice(){
   var price = doorPrice + handlePrice;
