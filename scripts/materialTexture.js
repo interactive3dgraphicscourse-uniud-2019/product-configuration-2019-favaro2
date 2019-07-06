@@ -1,5 +1,6 @@
 var texture = "walnut";
 
+// generazione di materiali da texture
 function getTextureMaterial(){
 
   // default: white, 1.0 intensity

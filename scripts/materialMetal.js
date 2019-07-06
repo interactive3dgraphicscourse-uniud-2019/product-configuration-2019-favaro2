@@ -1,5 +1,6 @@
 var metal = "gold";
 
+// generazione di materiali metallici
 function getMetalMaterial(){
 
   // default: white, 1.0 intensity

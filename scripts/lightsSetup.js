@@ -1,3 +1,4 @@
+// setup delle luci
 var lightMesh1 = new THREE.Mesh( new THREE.SphereGeometry( 25, 16, 16),
   new THREE.MeshBasicMaterial ({color: 0xffff00, wireframe:true}));
 lightMesh1.position.set( 300, 300, 800 );

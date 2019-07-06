@@ -1,3 +1,4 @@
+// funzioni per la gestione dei materiali
 function getMetal(metal){
   if (metal == "gold"){
     return {red: 1.0, green: 0.71, blue: 0.29, roughness: 0.54};
