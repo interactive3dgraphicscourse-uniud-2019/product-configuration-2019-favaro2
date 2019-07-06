@@ -78,7 +78,7 @@ function mainFunction(){
 
     controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
 
-    camera.position.set( 0, 10, 450 );
+    camera.position.set( 0, 10, 600 );
 
     //show lights setup
     /*scene.add(lightMesh1);
@@ -100,7 +100,9 @@ function mainFunction(){
   }
 
   addEventListener('resize', function() {
-    location.reload();
+    if (screen.width > 600) {
+      location.reload();
+    }
   });
 
   init();
