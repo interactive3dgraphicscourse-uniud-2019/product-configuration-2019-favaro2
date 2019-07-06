@@ -27,7 +27,7 @@
 
 # 30 giugno 2019
 
-* Prove di realizzazione della pagina web di prova.
+* Prove di realizzazione della pagina web di prova (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png).
 
 | ![First webpage](pics/pagina_prova.png) |
 | :-------------------------------------: |
@@ -94,17 +94,20 @@
 | Texture di [pino](https://3dtextures.me/2019/01/10/wood-011a/) (sinistra), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) (centro) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/) (destra) |
 
 * Inserimento delle nuove texture nella pagina.
-* La texture della plastica è fatta per risultare sporca e comperta da impronte, ma nella maniglia non si nota quindi può andare bene.
+* La texture della plastica è fatta per risultare sporca e coperta da impronte, ma nella maniglia non si nota quindi può andare bene.
 * Aggiornamento journal.
 
 # 6 luglio 2019
 
 * Sistemate icone materiali.
 * Sistemati vari difetti della pagina web.
-* Sostituito l'alluminio con lo zinco in quanto non adatto a porte da interni.
+* Sostituito l'alluminio (non adatto a porte da interni) con lo zinco.
 * Sistemati prezzi e caratteristiche prodotto.
 * Revisione codice.
+* Aggiornamento journal.
 
-TODO inserire fonti modello e texture in journal e readme
+TODO readme
+TODO inserire fonti modello e texture in readme
 TODO stats
+TODO screenshots
 TODO cancellare file inutili
