@@ -72,7 +72,7 @@
 * Creazione dei pulsanti per cambio materiali maniglia e porta (con materiali di prova).
 * Creazione funzioni per il cambio dei materiali.
 * Ricerca delle texture.
-* Trovate texture di legno ([noce](https://www.cc0textures.com/view.php?tex=Wood29) da [cc0textures.com](https://www.cc0textures.com/) e [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/) da [3dtextures.me](https://3dtextures.me/).
+* Trovate texture di legno ([noce](https://www.cc0textures.com/view.php?tex=Wood29) da [cc0textures.com](https://www.cc0textures.com/) e [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/) da [3dtextures.me](https://3dtextures.me/)).
 
 | ![Walnut and mahogany](pics/walnmog.png) |
 | :--------------------------------------: |
@@ -87,7 +87,14 @@
 * Creazione funzione per la modifica dinamica del prezzo in base ai materiali scelti.
 * Completate alcune parti della pagina web.
 * Ricerca di altre texture di legno e di plastica per porta e maniglia.
+* Trovate [pino](https://3dtextures.me/2019/01/10/wood-011a/) (da [3dtextures.me](https://3dtextures.me/)), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) (da [freepbr.com](https://freepbr.com/)) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/) (ancora da [3dtextures.me](https://3dtextures.me/)).
+
+| ![Pine bamboo and plastic](pics/pinebambplas.png) |
+| :-----------------------------------------------: |
+| Texture di [pino](https://3dtextures.me/2019/01/10/wood-011a/) (sinistra), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) (centro) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/) (destra) |
+
 * Inserimento delle nuove texture nella pagina.
+* La texture della plastica è fatta per risultare sporca e comperta da impronte, ma nella maniglia non si nota quindi può andare bene.
 * Aggiornamento journal.
 
 # 6 luglio 2019
