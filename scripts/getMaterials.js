@@ -1,8 +1,8 @@
 function getMetal(metal){
   if (metal == "gold"){
     return {red: 1.0, green: 0.71, blue: 0.29, roughness: 0.54};
-  } else if (metal == "alluminium"){
-    return {red: 0.91, green: 0.92, blue: 0.92, roughness: 0.74};
+  } else if (metal == "zinc"){
+    return {red: 0.66, green: 0.82, blue: 0.85, roughness: 0.74};
   }
 }
 

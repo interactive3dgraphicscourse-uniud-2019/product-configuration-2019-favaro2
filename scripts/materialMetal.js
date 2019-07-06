@@ -1,4 +1,4 @@
-var metal = "alluminium";
+var metal = "gold";
 
 function getMetalMaterial(){
 

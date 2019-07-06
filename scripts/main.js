@@ -121,9 +121,9 @@ function changeDoorMaterial(m){
     metal = "gold";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
-  } else if (m == "alluminium") {
+  } else if (m == "zinc") {
     doorPrice = 120;
-    metal = "alluminium";
+    metal = "zinc";
     meshFrame.material = getMetalMaterial();
     meshDoor.material = getMetalMaterial();
   } else if (m == "walnut") {
@@ -151,16 +151,16 @@ function changeHandleMaterial(m){
     metal = "gold";
     meshHandle.material = getMetalMaterial();
     meshLatch.material = getMetalMaterial();
-  } else if (m == "alluminium") {
+  } else if (m == "zinc") {
     handlePrice = 20;
-    metal = "alluminium";
+    metal = "zinc";
     meshHandle.material = getMetalMaterial();
     meshLatch.material = getMetalMaterial();
   } else if (m == "plastic") {
     handlePrice = 10;
     texture = "plastic";
     meshHandle.material = getTextureMaterial();
-    metal = "alluminium";
+    metal = "zinc";
     meshLatch.material = getMetalMaterial();
   }
   calcPrice()
