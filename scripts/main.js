@@ -72,11 +72,12 @@ function mainFunction(){
     );
 
     stats = new Stats();
-    //stats.domElement.style.position = 'absolute';
-    //stats.domElement.style.top = '0px';
     document.body.appendChild( stats.domElement );
 
     controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
+    controls.maxPolarAngle = 110 * Math.PI/180;
+    controls.minDistance = 235;
+    controls.maxDistance = 1000;
 
     camera.position.set( 0, 10, 600 );
 
