@@ -72,8 +72,9 @@ function mainFunction(){
       }
     );
 
-    stats = new Stats();
-    document.body.appendChild( stats.domElement );
+    //show stats
+    //stats = new Stats();
+    //document.body.appendChild( stats.domElement );
 
     controls = new THREE.OrbitControls( camera, document.getElementById('canvas-container') );
     controls.maxPolarAngle = 110 * Math.PI/180;
@@ -94,7 +95,7 @@ function mainFunction(){
   function animate() {
     requestAnimationFrame(animate);
 
-    stats.update();
+    //stats.update();
     controls.update();
 
 
