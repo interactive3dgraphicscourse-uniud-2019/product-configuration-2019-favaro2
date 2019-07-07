@@ -15,8 +15,7 @@
 * Ancora studio e ricerche su HTML e CSS per poter creare la pagina web in cui inserire il prodotto.
 * Ricerca online di possibili modelli 3D di oggetti da inserire nel progetto.
 * Alcune prove di rendering di un modello di vaso da fiori.
-* ACME vende qualsiasi cosa, quindi i siti web di riferimento per la creazione della pagina saranno i generici siti di e-commerce in cui è possibile comprare di tutto ([Amazon](https://www.amazon.it/),
-[eBay](https://www.ebay.it/)).
+* ACME vende qualsiasi cosa, quindi i siti web di riferimento per la creazione della pagina saranno i generici siti di e-commerce in cui è possibile comprare di tutto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)).
 * Progettazione su carta della pagina web.
 
 | ![Project webpage](pics/progetto_paginaweb.jpg) |

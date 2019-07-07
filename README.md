@@ -49,6 +49,34 @@ Si è deciso anche di inserire la possibilità di nascondere il telaio per mostr
 
 ![Result2](pics/porta_bamboo.png)
 
-La pagina è stata progettata anche con un semplice design di tipo responsive (sfruttando soprattutto gli strumenti di W3.CSS) in modo da potersi adattare anche agli schermi degli smartphone (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
+La pagina è stata progettata anche con un semplice design di tipo responsive (sfruttando soprattutto gli strumenti di W3.CSS) in modo da potersi adattare anche agli schermi degli smartphone. Sfruttando la forma vertiacale della porta, si è deciso di lasciare spazio a destra dell'oggetto per rendere lo scorrimento con le dita della pagina più comodo (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
 
 ![ResultMobile](pics/pagina_mobile.png)
+
+Il progetto è stato sviluppato con un notebook ASUS VivoBook Pro 15 N580VD-FI523T con le seguenti caratteristiche:
+- processore Intel Core i7-7700hq (2.8 ghz)
+- GPU NVIDIA GeForce GTX 1050
+- sistema operativo Windows 10 Home
+- browser Google Chrome versione 75.0.3770.100 (Build ufficiale) (a 64 bit)
+
+In tutte le prove effettuate con questo laptop il frame rate è stato sempre di 60 fps. La pagina è stata testata anche in pc con caratteristiche inferiori ma il frame rate è sempre rimasto invariato. I 60 fps sono sempre stati raggiunti anche nei test su smartphone di fascia medio-alta (Samsung Galaxy S7 edge e Huawei P smart) mentre con un dispositivo mobile più datato e di fascia bassa (LG Spirit H420) il frame rate è rimasto tra i 20 e i 30 fps.
+
+## Processo di sviluppo
+
+La prima fase è stata dedicata a studio e ricerche sugli strumenti per la realizzazione della pagina web poiché, sebbene fossi a conoscenza delle basi di HTML e CSS, la mia esperienza con essi era piuttosto scarsa. Dopo aver preso maggior confidenza con tali strumenti il passo successivo è stato quello di progettare il layout della pagina web su carta.
+
+| ![Project webpage](pics/progetto_paginaweb.jpg) |
+| :---------------------------------------------: |
+| Progetto della pagina web |
+
+Successivamente la pagina di prova è stata implementata utilizzando come immagine mock un semplice cubo (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)).
+
+| ![First webpage](pics/pagina_prova.png) |
+| :-------------------------------------: |
+| Realizzazione della pagina web di prova |
+
+In seguito l'attenzione è stata rivolta al prodotto da visualizzare: la porta è sembrata una buona idea in quanto poteva essere fatta sia in leghe metalliche sia di legno (materiale per cui erano disponibili molte texture libere). Il lavoro è proseguito quindi in parallelo tra il miglioramento della pagina web, l'organizzazione del codice e le prove di visualizzazione della porta. Per quanto riguarda i materiali, la decisione finale è stata quella di permettere all'utente di scegliere tra due varietà di acciaio (dorato e zincato) e quattro legni diversi (noce, mogano, pino e bambù) per la porta e tra acciaio (sempre dorato o zincato) e plastica per la maniglia.
+
+| ![Textures](pics/textures.png) |
+| :----------------------------: |
+| Texture utilizzate: da sinistra [noce](https://www.cc0textures.com/view.php?tex=Wood29), [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/), [pino](https://3dtextures.me/2019/01/10/wood-011a/), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/)|
