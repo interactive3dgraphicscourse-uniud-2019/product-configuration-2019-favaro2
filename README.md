@@ -48,3 +48,9 @@ Il prezzo presentato cambia dinamicamente in base alla combinazione che si sta v
 Si è deciso anche di inserire la possibilità di nascondere il telaio per mostrare solo la porta e permettere di vedere lo scrocco. L'utente ha la possibilità di ruotare e zoomare sul prodotto per esaminarlo meglio in tutti i suoi dettagli (*qui sotto: porta in bambù con maniglia in acciaio dorato e telaio nascosto per mostrare lo scrocco*).
 
 ![Result2](pics/porta_bamboo.png)
+
+La pagina è stata progettata anche con un semplice design di tipo responsive (sfruttando soprattutto gli strumenti di W3.CSS) in modo da potersi adattare anche agli schermi degli smartphone (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
+
+![ResultMobile](pics/pagina_mobile1.png)
+
+![ResultMobile](pics/pagina_mobile2.png)
