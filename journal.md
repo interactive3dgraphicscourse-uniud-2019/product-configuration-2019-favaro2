@@ -110,7 +110,4 @@
 
 * Sistemate cartelle e eliminati file inutili.
 * Redazione README.
-
-TODO readme
-TODO inserire fonti modello e texture in readme
-TODO screenshots
+* Aggiornamento journal.
