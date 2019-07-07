@@ -27,7 +27,7 @@
 
 # 30 giugno 2019
 
-* Prove di realizzazione della pagina web di prova (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png).
+* Prove di realizzazione della pagina web di prova (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)).
 
 | ![First webpage](pics/pagina_prova.png) |
 | :-------------------------------------: |
@@ -47,7 +47,7 @@
 # 1 luglio 2019
 
 * Creazione della repository del progetto.
-* Varie prove di materiali e texture sul modello della porta utilizzando gli shader visti a lezione (presi dagli esempi l14-microfacet-shader.html e l16-shadingWithTextures.html).
+* Varie prove di materiali e texture sul modello della porta utilizzando gli shader visti a lezione (presi dagli esempi `l14-microfacet-shader.html` e `l16-shadingWithTextures.html`).
 * Aggiornamento journal.
 
 # 2 luglio 2019
@@ -100,7 +100,8 @@
 # 6 luglio 2019
 
 * Sistemate icone materiali.
-* Sistemati vari difetti della pagina web.
+* Trovata soluzione al fastidioso difetto dei refresh automatici da dispositivo mobile dovuti alla funzione per la gestione dei resize della pagina: funzione bloccata nei dispositivi a schermo piccolo in quanto risultava inutile e dannosa.
+* Sistemati vari difetti estetici della pagina web.
 * Sostituito l'alluminio (non adatto a porte da interni) con lo zinco.
 * Sistemati prezzi e caratteristiche prodotto.
 * Revisione codice.
