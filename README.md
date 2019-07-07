@@ -37,4 +37,4 @@ PROGETTO IN FASE DI SVILUPPO
 
 ## Risultati
 
-- TODO
+Il progetto è stato sviluppato creando una pagina web ispirata ai siti di e-commerce generici che vendono qualsiasi tipo di prodotto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)) in quanto la ACME Corporation vende di tutto. Per la sua realizzazione si è deciso di sfruttare il framework [W3.CSS](https://www.w3schools.com/w3css/). Il font principale è Acme (sembrava proprio adatto) di [Huerta Tipográfica](https://huertatipografica.com/en) caricato tramite [Google Fonts](https://fonts.google.com/specimen/Acme) così come le icone. Per la visualizzazione del prodotto sono stati utilizzati due tipi di vertex e fragment shader: uno per la realizzazione dei materiali di acciaio e uno per la gestione delle texture di legno e plastica. Tutti e quattro sono stati presi (e opportunamente modificati) da esempi visti in aula, pertanto le equazioni di rendering sono quelle studiate a lezione. Per i metalli sono stati usati gli shader di `l14-microfacet-shader.html` mentre per le texture è stato utilizzato `l16-shadingWithTextures.html`.

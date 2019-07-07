@@ -114,5 +114,4 @@
 
 TODO readme
 TODO inserire fonti modello e texture in readme
-TODO stats
 TODO screenshots
