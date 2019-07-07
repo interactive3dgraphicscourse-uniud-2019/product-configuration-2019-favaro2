@@ -16,7 +16,7 @@ PROGETTO IN FASE DI SVILUPPO
 * **`Assignment`**: contiene i file con la consegna forniti per questo progetto.
 * **`lib`**: contiene le librerie necessarie al funzionamento del progetto.
 * **`model`**: contiene il file del modello 3d della porta.
-  * `Door_Component_BI3.obj`: modello 3d della porta realizzato da [3dhaupt](https://free3d.com/it/user/3dhaupt) e trovato su [free3d.com](https://free3d.com/it/3d-model/room-door-94798.html).
+  * `Door_Component_BI3.obj`: modello 3d della porta realizzato da [3dhaupt](https://free3d.com/it/user/3dhaupt), trovato su [free3d.com](https://free3d.com/it/3d-model/room-door-94798.html).
 * **`pics`**: contiene le immagini inserite in questo file e nel `journal.md`.
 * **`scripts`**: contiene i file Javascript per la visualizzazione del prodotto e la gestione della pagina web.
   * `getMaterials.js`: file che contiene le funzioni per la gestione dei materiali.
