@@ -51,6 +51,4 @@ Si è deciso anche di inserire la possibilità di nascondere il telaio per mostr
 
 La pagina è stata progettata anche con un semplice design di tipo responsive (sfruttando soprattutto gli strumenti di W3.CSS) in modo da potersi adattare anche agli schermi degli smartphone (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
 
-![ResultMobile](pics/pagina_mobile1.png =1000x200)
-
-![ResultMobile](pics/pagina_mobile2.png =1000x200)
+![ResultMobile](pics/pagina_mobile.png)
