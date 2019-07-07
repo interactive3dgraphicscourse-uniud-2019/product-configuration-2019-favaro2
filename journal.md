@@ -20,7 +20,7 @@
 * Progettazione su carta della pagina web.
 
 | ![Project webpage](pics/progetto_paginaweb.jpg) |
-| :------------------------------------------: |
+| :---------------------------------------------: |
 | Progetto della pagina web |
 
 * Aggiornamento journal.
@@ -61,9 +61,9 @@
 # 3 luglio 2019
 
 * Prove di visualizzazione del modello nella pagina web con cambio di materiali e mostra/nascondi telaio.
-* Scrittura del codice del file principale per il caricamento del modello nella pagina web.
+* Creazione del file `main.js` e scrittura del codice della funzione principale (*mainFunction*) per il caricamento del modello nella pagina web.
 * Scrittura del codice di prova per la creazione e modifica dei materiali.
-* Scrittura del codice del setup delle luci dopo alcune ricerche online e i consigli di una persona esperta.
+* Scrittura del codice del setup delle luci (file `lightSetup.js`) dopo alcune ricerche online e i consigli di una persona esperta.
 * Varie prove di sistemazione layout della pagina web.
 * Aggiornamento journal.
 
@@ -84,7 +84,7 @@
 
 # 5 luglio 2019
 
-* Creazione funzione per la modifica dinamica del prezzo in base ai materiali scelti.
+* Creazione funzione per la modifica dinamica del prezzo in base ai materiali scelti (*calcPrice* nel file `priceCalculator.js`).
 * Completate alcune parti della pagina web.
 * Ricerca di altre texture di legno e di plastica per porta e maniglia.
 * Trovate [pino](https://3dtextures.me/2019/01/10/wood-011a/) (da [3dtextures.me](https://3dtextures.me/)), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) (da [freepbr.com](https://freepbr.com/)) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/) (ancora da [3dtextures.me](https://3dtextures.me/)).
