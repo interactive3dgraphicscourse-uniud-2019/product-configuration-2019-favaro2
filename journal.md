@@ -107,8 +107,12 @@
 * Revisione codice.
 * Aggiornamento journal.
 
+# 7 luglio 2019
+
+* Sistemate cartelle e eliminati file inutili.
+* Redazione README.
+
 TODO readme
 TODO inserire fonti modello e texture in readme
 TODO stats
 TODO screenshots
-TODO cancellare file inutili
