@@ -3,7 +3,8 @@ var scene, renderer, meshFrame, meshDoor, meshLatch, meshHandle, doorMaterial, l
 // funzione iniziale per il caricamento dell'oggetto
 function mainFunction(){
 
-  var camera, stats, controls, container, w, h;
+  var camera, controls, container, w, h;
+  //var stats;
 
 
   function init() {
@@ -104,8 +105,8 @@ function mainFunction(){
 
   // ridimensiona canvas in base alla grandezza della pagina
   addEventListener('resize', function() {
-    // solo su schermi grandi (su smartphone e ipad creava problemi)
-    if (screen.width > 1536) { // 600 smartphone 1536 ipad
+    // solo su schermi grandi (su smartphone creava problemi)
+    if (screen.width > 600) {
       location.reload();
     }
   });
