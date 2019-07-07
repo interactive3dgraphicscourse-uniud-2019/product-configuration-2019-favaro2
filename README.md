@@ -80,3 +80,17 @@ In seguito l'attenzione è stata rivolta al prodotto da visualizzare: la porta �
 | ![Textures](pics/textures.png) |
 | :----------------------------: |
 | Texture utilizzate: da sinistra [noce](https://www.cc0textures.com/view.php?tex=Wood29), [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/), [pino](https://3dtextures.me/2019/01/10/wood-011a/), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/)|
+
+### Strumenti e risorse
+
+* **Atom**: editor per il coding e la gestione della repository.
+* **W3.CSS**: framework utilizzato per la creazione della pagina web.
+* **Google Fonts**: libreria da cui sono stati presi i font e le icone.
+* **Microsoft Paint**: utilizzato per alcune semplici modifiche a texture e altre immagini.
+* **iLoveIMG**: app online utilizzata per ridimensionare e ruotare alcune immagini e texture.
+
+## Difetti noti
+
+* Per permettere al contenitore in cui è visualizzato il prodotto di adattarsi alle dimensioni della pagina, è stata aggiunta una funzione all'interno della *mainFunction* che ricarica la pagina ad ogni ridimensionamento. Questa però causa nei dispositivi mobili dei fastidiosi refresh automatici durante lo scorrimento. Per ovviare al problema è stata aggiunta una guardia che blocca la funzione negli smartphone ma nei tablet il difetto rimane.
+* La texture della plastica è fatta per risultare sporca e coperta da impronte, ma nella maniglia il difetto non si nota.
+* Le due parti della maniglia vengono illuminate da tutte e quattro le luci della scena nonostante due di esse siano coperte dalla porta. Poiché il difetto è stato notato in una fase avanzata del progetto ed è difficilmente visibile si è deciso di lasciarlo com'è.
