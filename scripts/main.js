@@ -103,8 +103,8 @@ function mainFunction(){
 
   // ridimensiona canvas in base alla grandezza della pagina
   addEventListener('resize', function() {
-    // solo su schermi grandi (su smartphone creava problemi)
-    if (screen.width > 600) {
+    // solo su schermi grandi (su smartphone e ipad creava problemi)
+    if (screen.width > 1536) { // 600 smartphone 1536 ipad
       location.reload();
     }
   });
