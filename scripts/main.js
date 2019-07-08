@@ -84,22 +84,17 @@ function mainFunction(){
 
     camera.position.set( 0, 10, 600 );
 
-    //show lights setup
+    //mostra mesh delle luci
     /*scene.add(lightMesh1);
     scene.add(lightMesh2);
     scene.add(lightMesh3);
     scene.add(lightMesh4);*/
-
-
   }
 
   function animate() {
     requestAnimationFrame(animate);
-
     //stats.update();
     controls.update();
-
-
     renderer.render(scene, camera);
   }
 
@@ -174,6 +169,7 @@ function changeHandleMaterial(m){
 }
 
 // funzioni per nascondere/mostrare il telaio
+
 function hideFrame(){
   scene.remove( meshFrame );
 }
