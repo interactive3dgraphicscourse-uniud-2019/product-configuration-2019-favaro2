@@ -3,8 +3,6 @@
 - Maurizio Favaro (matricola 120099)
 - favaro.maurizio@spes.uniud.it
 
-PROGETTO IN FASE DI SVILUPPO
-
 ## Descrizione
 
  ![Webpage](pics/pagina_intera.png)
