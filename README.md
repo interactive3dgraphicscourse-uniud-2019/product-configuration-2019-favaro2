@@ -37,7 +37,7 @@ PROGETTO IN FASE DI SVILUPPO
 
 ## Risultati
 
-Il progetto è stato sviluppato creando una pagina web ispirata ai siti di e-commerce generici che propongono qualsiasi tipo di prodotto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)) in quanto la ACME Corporation vende di tutto. Per la sua realizzazione si è deciso di sfruttare il framework [W3.CSS](https://www.w3schools.com/w3css/). Il font principale è Acme (sembrava proprio adatto) di [Huerta Tipográfica](https://huertatipografica.com/en) caricato tramite [Google Fonts](https://fonts.google.com/specimen/Acme) così come le icone. Per la visualizzazione del prodotto sono stati utilizzati due tipi di vertex e fragment shader: uno per la realizzazione dei materiali di acciaio e uno per la gestione delle texture di legno e plastica. Tutti e quattro sono stati presi (e opportunamente modificati) da esempi visti in aula, pertanto le equazioni di rendering sono quelle studiate a lezione. Per i metalli sono stati usati gli shader (aggiustati per gestire più luci) di `l14-microfacet-shader.html` mentre per le texture è stata utilizzata una versione adattata di quelli visti in `l16-shadingWithTextures.html`. Come richiesto dal progetto, la pagina presenta una zona in cui un cliente può personalizzare il prodotto modificando i materiali di porta e maniglia, osservando quindi l'effetto visivo sul modello (*qui sotto: porta in acciaio zincato con maniglia in plastica*).
+Il progetto è stato sviluppato creando una pagina web ispirata ai siti di e-commerce generici che propongono qualsiasi tipo di prodotto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)) in quanto la ACME Corporation vende di tutto. Per la realizzazione della pagina si è deciso di sfruttare il framework [W3.CSS](https://www.w3schools.com/w3css/). Il font principale è Acme (sembrava proprio adatto) di [Huerta Tipográfica](https://huertatipografica.com/en) caricato tramite [Google Fonts](https://fonts.google.com/specimen/Acme) così come le icone. Per la visualizzazione del prodotto sono stati utilizzati due tipi di vertex e fragment shader: uno per la realizzazione dei materiali di acciaio e uno per la gestione delle texture di legno e plastica. Tutti e quattro sono stati presi (e opportunamente modificati) da esempi visti in aula, pertanto le equazioni di rendering sono quelle studiate a lezione. Per i metalli sono stati usati gli shader (aggiustati per gestire più luci) di `l14-microfacet-shader.html` mentre per le texture è stata utilizzata una versione adattata di quelli visti in `l16-shadingWithTextures.html`. Come richiesto dalla consegna del progetto, la pagina presenta una zona in cui il cliente può personalizzare il prodotto modificando i materiali di porta e maniglia, osservando quindi l'effetto visivo sul modello (*qui sotto: porta in acciaio zincato con maniglia in plastica*).
 
 ![Result1](pics/porta_zincata.png)
 
@@ -49,7 +49,7 @@ Si è deciso anche di inserire la possibilità di nascondere il telaio per mostr
 
 ![Result2](pics/porta_bamboo.png)
 
-La pagina è stata progettata anche con un semplice design di tipo responsive (sfruttando soprattutto gli strumenti di W3.CSS) in modo da potersi adattare anche agli schermi degli smartphone. Sfruttando la forma vertiacale della porta, si è deciso di lasciare spazio a destra dell'oggetto per rendere lo scorrimento con le dita della pagina più comodo (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
+La pagina è stata progettata in modo da potersi adattare anche agli schermi degli smartphone, sfruttando soprattutto gli strumenti di W3.CSS che consentono di creare un design responsivo. Sfruttando la forma vertiacale della porta, si è deciso di lasciare spazio a destra dell'oggetto per rendere più comodo lo scorrimento della pagina usando le dita (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
 
 ![ResultMobile](pics/pagina_mobile.png)
 
@@ -59,17 +59,17 @@ Il progetto è stato sviluppato con un notebook ASUS VivoBook Pro 15 N580VD-FI52
 - sistema operativo Windows 10 Home
 - browser Google Chrome versione 75.0.3770.100 (Build ufficiale) (a 64 bit)
 
-In tutte le prove effettuate con questo laptop il frame rate è stato sempre di 60 fps. La pagina è stata testata anche in pc con caratteristiche inferiori ma il frame rate è sempre rimasto invariato. I 60 fps sono sempre stati raggiunti anche nei test su smartphone di fascia medio-alta (Samsung Galaxy S7 edge e Huawei P smart) mentre con un dispositivo mobile più datato e di fascia bassa (LG Spirit H420) il frame rate è rimasto tra i 20 e i 30 fps.
+In tutte le prove effettuate con questo laptop il frame rate è stato sempre di 60 fps. La pagina è stata testata anche in pc con caratteristiche molto inferiori ma il frame rate è sempre rimasto invariato. I 60 fps sono sempre stati raggiunti anche nei test su smartphone di fascia medio-alta (Samsung Galaxy S7 edge e Huawei P smart) mentre con un dispositivo mobile più datato e di fascia bassa (LG Spirit H420) il frame rate è rimasto tra i 20 e i 30 fps.
 
 ## Processo di sviluppo
 
-La prima fase è stata dedicata a studio e ricerche sugli strumenti per la realizzazione della pagina web poiché, sebbene fossi a conoscenza delle basi di HTML e CSS, la mia esperienza con essi era piuttosto scarsa. Dopo aver preso maggior confidenza con tali strumenti il passo successivo è stato quello di progettare il layout della pagina web su carta.
+La prima fase è stata dedicata a studio e ricerche sugli strumenti per la realizzazione della pagina web poiché, sebbene conoscessi le basi di HTML e CSS, la mia esperienza con essi era piuttosto scarsa. Dopo aver preso maggior confidenza con tali strumenti il passo successivo è stato quello di progettare il layout della pagina web su carta.
 
 | ![Project webpage](pics/progetto_paginaweb.jpg) |
 | :---------------------------------------------: |
 | Progetto della pagina web |
 
-Successivamente la pagina di prova è stata implementata utilizzando come immagine mock un semplice cubo (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)).
+Successivamente la pagina di prova è stata implementata utilizzando come prodotto mock un semplice cubo 3d (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)).
 
 | ![First webpage](pics/pagina_prova.png) |
 | :-------------------------------------: |
@@ -79,18 +79,17 @@ In seguito l'attenzione è stata rivolta al prodotto da visualizzare: la porta �
 
 | ![Textures](pics/textures.png) |
 | :----------------------------: |
-| Texture utilizzate: da sinistra [noce](https://www.cc0textures.com/view.php?tex=Wood29), [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/), [pino](https://3dtextures.me/2019/01/10/wood-011a/), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/)|
+| Le texture utilizzate nel progetto. Da sinistra a destra: [noce](https://www.cc0textures.com/view.php?tex=Wood29), [mogano](https://3dtextures.me/2018/12/27/wood-009-mahogany/), [pino](https://3dtextures.me/2019/01/10/wood-011a/), [bambù](https://freepbr.com/materials/bamboo-wood-pbr-material/) e [plastica](https://3dtextures.me/2018/03/26/plastic-001-w-speckles-and-fingerprints/)|
 
 ### Strumenti e risorse
 
 * **Atom**: editor per il coding e la gestione della repository.
 * **W3.CSS**: framework utilizzato per la creazione della pagina web.
-* **Google Fonts**: libreria da cui sono stati presi i font e le icone.
 * **Microsoft Paint**: utilizzato per alcune semplici modifiche a texture e altre immagini.
 * **iLoveIMG**: app online utilizzata per ridimensionare e ruotare alcune immagini e texture.
 
 ## Difetti noti
 
-* Per permettere al contenitore in cui è visualizzato il prodotto di adattarsi alle dimensioni della pagina, è stata aggiunta una funzione all'interno della *mainFunction* che ricarica la pagina ad ogni ridimensionamento. Questa però causa nei dispositivi mobili dei fastidiosi refresh automatici durante lo scorrimento. Per ovviare al problema è stata aggiunta una guardia che blocca la funzione negli smartphone ma nei tablet il difetto rimane.
+* Per permettere al contenitore in cui è visualizzato il prodotto di adattarsi alle dimensioni della pagina, è stata aggiunta una funzione all'interno della *mainFunction* che ricarica la pagina ad ogni ridimensionamento. Questa però causa nei dispositivi mobili dei fastidiosi refresh automatici durante lo scorrimento. Per ovviare al problema è stata aggiunta una guardia che blocca la funzione negli smartphone, ma nei tablet il difetto rimane.
 * La texture della plastica è fatta per risultare sporca e coperta da impronte, ma nella maniglia il difetto non si nota.
-* Le due parti della maniglia vengono illuminate da tutte e quattro le luci della scena nonostante due di esse siano coperte dalla porta. Poiché il difetto è stato notato in una fase avanzata del progetto ed è difficilmente visibile si è deciso di lasciarlo com'è.
+* Le due parti della maniglia vengono illuminate da tutte e quattro le luci della scena nonostante due di esse siano coperte dalla porta. Poiché il difetto è stato notato in una fase avanzata del progetto ed è difficilmente visibile si è deciso di non modificare la situazione.
