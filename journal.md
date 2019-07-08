@@ -100,6 +100,7 @@
 
 * Sistemate icone materiali.
 * Trovata soluzione al fastidioso difetto dei refresh automatici da dispositivo mobile dovuti alla funzione per la gestione dei resize della pagina: funzione bloccata nei dispositivi a schermo piccolo in quanto risultava inutile e dannosa.
+* Il problema tuttavia persiste nei tablet. Non trovata una soluzione completa e soddisfacente.
 * Sistemati vari difetti estetici della pagina web.
 * Sostituito l'alluminio (non adatto a porte da interni) con lo zinco.
 * Sistemati prezzi e caratteristiche prodotto.
@@ -110,4 +111,11 @@
 
 * Sistemate cartelle e eliminati file inutili.
 * Redazione README.
+* Aggiornamento journal.
+
+# 8 luglio 2019
+
+* Revisione README.
+* Revisione codice.
+* Progetto concluso.
 * Aggiornamento journal.
