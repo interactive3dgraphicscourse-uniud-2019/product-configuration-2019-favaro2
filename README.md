@@ -37,7 +37,7 @@ PROGETTO IN FASE DI SVILUPPO
 
 ## Risultati
 
-Il progetto è stato sviluppato creando una pagina web ispirata ai siti di e-commerce generici che propongono qualsiasi tipo di prodotto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)) in quanto la ACME Corporation vende di tutto. Per la realizzazione della pagina si è deciso di sfruttare il framework [W3.CSS](https://www.w3schools.com/w3css/). Il font principale è Acme (sembrava proprio adatto) di [Huerta Tipográfica](https://huertatipografica.com/en) caricato tramite [Google Fonts](https://fonts.google.com/specimen/Acme) così come le icone. Per la visualizzazione del prodotto sono stati utilizzati due tipi di vertex e fragment shader: uno per la realizzazione dei materiali di acciaio e uno per la gestione delle texture di legno e plastica. Tutti e quattro sono stati presi (e opportunamente modificati) da esempi visti in aula, pertanto le equazioni di rendering sono quelle studiate a lezione. Per i metalli sono stati usati gli shader (aggiustati per gestire più luci) di `l14-microfacet-shader.html` mentre per le texture è stata utilizzata una versione adattata di quelli visti in `l16-shadingWithTextures.html`. Come richiesto dalla consegna del progetto, la pagina presenta una zona in cui il cliente può personalizzare il prodotto modificando i materiali di porta e maniglia, osservando quindi l'effetto visivo sul modello (*qui sotto: porta in acciaio zincato con maniglia in plastica*).
+Il progetto è stato sviluppato creando una pagina web ispirata ai siti di e-commerce generici che propongono qualsiasi tipo di prodotto ([Amazon](https://www.amazon.it/), [eBay](https://www.ebay.it/)) in quanto la ACME Corporation vende di tutto. Per la realizzazione della pagina si è deciso di sfruttare il framework [W3.CSS](https://www.w3schools.com/w3css/). Il font principale è Acme (sembrava proprio adatto) di [Huerta Tipográfica](https://huertatipografica.com/en), caricato tramite [Google Fonts](https://fonts.google.com/specimen/Acme) così come le icone. Per la visualizzazione del prodotto sono stati utilizzati due tipi di vertex e fragment shader: uno per la realizzazione dei materiali di acciaio e uno per la gestione delle texture di legno e plastica. Tutti e quattro sono stati presi (e opportunamente modificati) da esempi visti in aula, pertanto le equazioni di rendering sono quelle studiate a lezione. Per i metalli sono stati usati gli shader (aggiustati per gestire più luci) di `l14-microfacet-shader.html` mentre per le texture è stata utilizzata una versione adattata di quelli visti in `l16-shadingWithTextures.html`. Come richiesto dalla consegna del progetto, la pagina presenta una zona in cui il cliente può personalizzare il prodotto modificando i materiali di porta e maniglia, osservando quindi l'effetto visivo sul modello (*qui sotto: porta in acciaio zincato con maniglia in plastica*).
 
 ![Result1](pics/porta_zincata.png)
 
@@ -69,11 +69,11 @@ La prima fase è stata dedicata a studio e ricerche sugli strumenti per la reali
 | :---------------------------------------------: |
 | Progetto della pagina web |
 
-Successivamente la pagina di prova è stata implementata utilizzando come prodotto mock un semplice cubo 3d (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)).
+Successivamente la pagina di prova è stata implementata utilizzando come prodotto mock un semplice cubo 3d.
 
 | ![First webpage](pics/pagina_prova.png) |
 | :-------------------------------------: |
-| Realizzazione della pagina web di prova |
+| Realizzazione della pagina web di prova (logo ACME da [warnerbros.fandom.com](https://warnerbros.fandom.com/wiki/ACME_Corporation?file=Acme-corp.png)) |
 
 In seguito l'attenzione è stata rivolta al prodotto da visualizzare: la porta è sembrata una buona idea in quanto poteva essere fatta sia in leghe metalliche sia di legno (materiale per cui erano disponibili molte texture libere). Il lavoro è proseguito quindi in parallelo tra il miglioramento della pagina web, l'organizzazione del codice e le prove di visualizzazione della porta. Per quanto riguarda i materiali, la decisione finale è stata quella di permettere all'utente di scegliere tra due varietà di acciaio (dorato e zincato) e quattro legni diversi (noce, mogano, pino e bambù) per la porta e tra acciaio (sempre dorato o zincato) e plastica per la maniglia.
 
@@ -90,6 +90,6 @@ In seguito l'attenzione è stata rivolta al prodotto da visualizzare: la porta �
 
 ## Difetti noti
 
-* Per permettere al contenitore in cui è visualizzato il prodotto di adattarsi alle dimensioni della pagina, è stata aggiunta una funzione all'interno della *mainFunction* che ricarica la pagina ad ogni ridimensionamento. Questa però causa nei dispositivi mobili dei fastidiosi refresh automatici durante lo scorrimento. Per ovviare al problema è stata aggiunta una guardia che blocca la funzione negli smartphone, ma nei tablet il difetto rimane.
+* Per permettere al contenitore in cui è visualizzato il prodotto di adattarsi alle dimensioni della pagina, è stata aggiunta una funzione che la ricarica ad ogni ridimensionamento all'interno della *mainFunction*. Questa però causa nei dispositivi mobili dei fastidiosi refresh automatici durante lo scorrimento. Per ovviare al problema è stata aggiunta una guardia che blocca la funzione negli smartphone, ma nei tablet il difetto rimane.
 * La texture della plastica è fatta per risultare sporca e coperta da impronte, ma nella maniglia il difetto non si nota.
-* Le due parti della maniglia vengono illuminate da tutte e quattro le luci della scena nonostante due di esse siano coperte dalla porta. Poiché il difetto è stato notato in una fase avanzata del progetto ed è difficilmente visibile si è deciso di non modificare la situazione.
+* Entrambe le parti della maniglia vengono illuminate da tutte e quattro le luci della scena nonostante due di esse siano coperte dalla porta. Poiché il difetto è stato notato in una fase avanzata del progetto ed è difficilmente visibile si è deciso di non modificare la situazione.
